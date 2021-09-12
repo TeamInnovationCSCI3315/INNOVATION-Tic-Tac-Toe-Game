@@ -141,6 +141,9 @@
   <ItemGroup>
     <ClCompile Include="INNOVATION-Tic-Tac-Toe-Game.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BoardMethods.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
