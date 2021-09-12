@@ -15,3 +15,11 @@ void BoardMethods::DisplayGrid()
 	cout << "  -------------" << endl;
 	cout << "  " << grid[6] << "  | " << grid[7] << " |  " << grid[8] << endl;
 }
+void BoardMethods::CheckTurn(bool)
+{
+
+}
+string BoardMethods::CoinFlip()
+{
+	return "Player 1";
+}
