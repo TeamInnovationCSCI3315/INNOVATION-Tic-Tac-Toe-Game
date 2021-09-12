@@ -5,12 +5,13 @@
 
 using namespace std;
 
-void DisplayGrid(string grid[])
+
+void BoardMethods::DisplayGrid()
 {
-	cout << "This is printing from DisplayGrid";
-	/*cout << "    1   |   2   |   3  ";
-	cout << "  -----------------------";
-	cout << "     4   |   5   |   6  ";
-	cout << "  -----------------------";
-	cout << "     7   |   8   |   9  ";*/
+	//cout << "This is printing from DisplayGrid";
+	cout << "  " << grid[0] << "  | " << grid[1]  << " |  " << grid[2] << endl;
+	cout << "  -------------" << endl;
+	cout << "  " << grid[3] << "  | " << grid[4] << " |  " << grid[5] << endl;
+	cout << "  -------------" << endl;
+	cout << "  " << grid[6] << "  | " << grid[7] << " |  " << grid[8] << endl;
 }

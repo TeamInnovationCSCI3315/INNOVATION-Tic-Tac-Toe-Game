@@ -7,8 +7,8 @@ using namespace std;
 
 int main()
 {
-	string grid[9] = { "1","2","3","4","5","6","7","8","9" };
-	cout << "This is printing from main";
+
+	cout << "This is printing from main" << endl;
 	BoardMethods Board;
-	Board.DisplayGrid(grid);
+	Board.DisplayGrid();
 }
