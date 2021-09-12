@@ -18,6 +18,9 @@
     <ClCompile Include="INNOVATION-Tic-Tac-Toe-Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="BoardMethods.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BoardMethods.h">

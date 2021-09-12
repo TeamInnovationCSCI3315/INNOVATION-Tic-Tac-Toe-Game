@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BoardMethods.cpp" />
     <ClCompile Include="INNOVATION-Tic-Tac-Toe-Game.cpp" />
   </ItemGroup>
   <ItemGroup>
