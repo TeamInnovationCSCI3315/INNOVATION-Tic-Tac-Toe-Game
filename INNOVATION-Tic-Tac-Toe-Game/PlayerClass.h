@@ -10,7 +10,7 @@ class PlayerClass
 {
 private:
 
-	int score;
+	int score; //The score of the game, counting wins
 
 
 public:

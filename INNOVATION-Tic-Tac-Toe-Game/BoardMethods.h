@@ -10,15 +10,16 @@ class BoardMethods
 private:
 	// The default values of the grid are stored below
 	string grid[9] = { "1","2","3","4","5","6","7","8","9" };
-	bool turn;
-	int PlayerChoice;
+	bool turn; //Bool turn is made
+	int PlayerChoice; //The creation of PlayerChoice
+	bool inputv;
 public:
 	bool InputValid();
 	void GameStart(); //Game begins
 	string CoinFlip(); //Gives the CoinFlip 
 	void DisplayGrid(); //Displays the grid and the choices
 	void CheckTurn();  //Checks the current turn from the two players
-	void PlayerInput();
+	void PlayerInput(); //Checks player input
 	BoardMethods();
 
 };

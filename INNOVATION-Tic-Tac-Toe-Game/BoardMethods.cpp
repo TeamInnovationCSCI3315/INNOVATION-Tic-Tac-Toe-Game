@@ -6,26 +6,23 @@
 #include <cstdlib>
 
 using namespace std;
-bool BoardMethods::InputValid()
+bool BoardMethods::InputValid() //This boolean checks if the input the user will make is a valid input
 {
-	int i=0;
-	while(i<9)
-	{
-		if(grid[i]=="X"||grid[i]=="O")
+	int PlayerChoiceTest = PlayerChoice+1;
+	string validate = to_string(PlayerChoiceTest);
+		if(grid[PlayerChoice]!=validate)
 		{
+			inputv=false;
 			return false;
 		}
 		else
 		{
+			inputv=true;
 			return true;
 		}
-	}
+
 }
-/*void BoardMethods::GameStart()
-{
-	CoinFlip();
-	DisplayGrid();
-}*/
+
 void BoardMethods::PlayerInput()
 {
 	if(turn==false)//Player 1's turn is when turn==false
@@ -112,6 +109,11 @@ void BoardMethods::CheckTurn()
 	{
 		cout << "Player 1's Turn: Enter a number (1-9) on the board\n"; //Player 1's Turn
 		cin >> PlayerChoice; // Takes in the input of the player
+		while(inputv==false)
+		{
+			cout << "Space is Taken\n";
+			cin >> PlayerChoice;
+		}
 		PlayerInput();
 		DisplayGrid(); //Displays the choice just made
 		turn=true; //Ends the player's turn
@@ -121,6 +123,11 @@ void BoardMethods::CheckTurn()
 	{
 		cout << "Player 2's Turn: Enter a number (1-9) on the board\n"; //Player 2's turn
 		cin >> PlayerChoice; //Takes in the input of the player
+		while(inputv==false)
+		{
+			cout << "Space is Taken\n";
+			cin >> PlayerChoice;
+		}
 		PlayerInput();
 		DisplayGrid(); //Displays the choice just made
 		turn=false; //Ends the player's turn
@@ -132,6 +139,7 @@ BoardMethods::BoardMethods()
 {
 	turn = false; //Sets the default turn
 	PlayerChoice = 0; //Sets the default choice for the player
+	inputv=true;
 }
 
 string BoardMethods::CoinFlip()
