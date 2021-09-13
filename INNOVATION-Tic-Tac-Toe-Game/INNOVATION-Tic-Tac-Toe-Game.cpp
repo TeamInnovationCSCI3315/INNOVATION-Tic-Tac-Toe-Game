@@ -34,15 +34,17 @@ int main()
 	cout << "Rules: Labeled Player will input their desired location on the grid with numbers [1-9]" << endl; //Displays rules to users
 	cout << "Person to get three of their symbols in a row will win (Player 1 = X, Player 2 = O) " << endl << endl; //Win Condition
 
+	Board.DisplayGrid();
 
 	
 
 	while(choice != 91)
 	{
-		Board.DisplayGrid(choice); //The choice the player has to make called from BoardMethods.cpp
+	//	Board.DisplayGrid(choice); //The choice the player has to make called from BoardMethods.cpp
 		cout << "\n";
-		cout << "Where would " << firstPlayer << " like to go ? ";
-		cin >> choice; //The player's choice
+	//	cout << "Where would " << firstPlayer << " like to go ? ";
+	//	cin >> choice; //The player's choice
+	Board.CheckTurn();
 	}
 	
 

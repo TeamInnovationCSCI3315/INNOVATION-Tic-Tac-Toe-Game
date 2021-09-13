@@ -6,70 +6,132 @@
 #include <cstdlib>
 
 using namespace std;
-
+bool BoardMethods::InputValid()
+{
+	int i=0;
+	while(i<9)
+	{
+		if(grid[i]=="X"||grid[i]=="O")
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+	}
+}
 /*void BoardMethods::GameStart()
 {
 	CoinFlip();
 	DisplayGrid();
 }*/
-
-void BoardMethods::DisplayGrid(int choice)
+void BoardMethods::PlayerInput()
 {
-	//cout << "This is printing from DisplayGrid";
-	//This is a switch statement that determins the choice that Player 1 can make
-	switch(choice) {
-  case 1:
-    grid[0]="X";
-	break;
-  case 2:
-    grid[1]="X";
-	break;
-  case 3:
-	grid[2]="X";
-	break;
-  case 4:
-	grid[3]="X";
-	break;
-  case 5:
-	grid[4]="X";
-	break;
-  case 6:
-	grid[5]="X";
-	break;
-  case 7:
-	grid[6]="X";
-	break;
-  case 8:
-	grid[7]="X";
-	break;
-  case 9:
-	grid[8]="X";
-	break;
+	if(turn==false)//Player 1's turn is when turn==false
+	{
+	switch(PlayerChoice) //Defined as a switch for every choice the player can make in the game 
+		{
+  	case 1:
+    	grid[0]="X";
+		break;
+  	case 2:
+    	grid[1]="X";
+		break;
+  	case 3:
+		grid[2]="X";
+		break;
+  	case 4:
+		grid[3]="X";
+		break;
+  	case 5:
+		grid[4]="X";
+		break;
+  	case 6:
+		grid[5]="X";
+		break;
+  	case 7:
+		grid[6]="X";
+		break;
+  	case 8:
+		grid[7]="X";
+		break;
+  	case 9:
+		grid[8]="X";
+		break;
+		}
+	}
 
+	else//Player 2's turn begins when turn==true
+{
+	switch(PlayerChoice) //Switch statement for all player choices in game
+		{
+  	case 1:
+    	grid[0]="O";
+		break;
+  	case 2:
+    	grid[1]="O";
+		break;
+  	case 3:
+		grid[2]="O";
+		break;
+  	case 4:
+		grid[3]="O";
+		break;
+  	case 5:
+		grid[4]="O";
+		break;
+  	case 6:
+		grid[5]="O";
+		break;
+  	case 7:
+		grid[6]="O";
+		break;
+  	case 8:
+		grid[7]="O";
+		break;
+  	case 9:
+		grid[8]="O";
+		break;
+		}
+	}
+}
+void BoardMethods::DisplayGrid()
+{
+	//This is the grid for the program, with numbers and spacing included.
 
-    // code block
-}//This is the grid for the program, with numbers and spacing included.
 	cout << "  " << grid[0] << "  | " << grid[1] << " |  " << grid[2] << endl;
 	cout << "  -------------" << endl;
 	cout << "  " << grid[3] << "  | " << grid[4] << " |  " << grid[5] << endl;
 	cout << "  -------------" << endl;
 	cout << "  " << grid[6] << "  | " << grid[7] << " |  " << grid[8] << endl;
 }
-void BoardMethods::CheckTurn(bool)
+void BoardMethods::CheckTurn()
 {
 	if (turn == false)
 	{
-		
+		cout << "Player 1's Turn: Enter a number (1-9) on the board\n"; //Player 1's Turn
+		cin >> PlayerChoice; // Takes in the input of the player
+		PlayerInput();
+		DisplayGrid(); //Displays the choice just made
+		turn=true; //Ends the player's turn
+
 	}
 	else if (turn == true)
 	{
+		cout << "Player 2's Turn: Enter a number (1-9) on the board\n"; //Player 2's turn
+		cin >> PlayerChoice; //Takes in the input of the player
+		PlayerInput();
+		DisplayGrid(); //Displays the choice just made
+		turn=false; //Ends the player's turn
 
 	}
 }
 
 BoardMethods::BoardMethods()
 {
-	turn = false;
+	turn = false; //Sets the default turn
+	PlayerChoice = 0; //Sets the default choice for the player
 }
 
 string BoardMethods::CoinFlip()
