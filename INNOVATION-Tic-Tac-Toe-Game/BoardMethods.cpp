@@ -36,8 +36,10 @@ BoardMethods::BoardMethods()
 string BoardMethods::CoinFlip()
 {
 //This string does a random coin toss, from one to two to determine who goes first in the game.
-	int random = rand() % 2 + 1;
-	cout << random;
+	
+	srand(time(0));
+	int random = (rand() % 2) + 1;
+
 	if (random == 1)
 	{
 		return "Player 1";
