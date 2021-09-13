@@ -1,13 +1,21 @@
 #include "BoardMethods.h"
+#include "PlayerClass.h"
 #include <iostream>
+#include <ctime>
 #include <string>
 #include <cstdlib>
 
 using namespace std;
 
-
-void BoardMethods::DisplayGrid()
+/*void BoardMethods::GameStart()
 {
+	CoinFlip();
+	DisplayGrid();
+}*/
+
+void BoardMethods::DisplayGrid(int choice)
+{
+//This is the grid for the program, with numbers and spacing included.
 	//cout << "This is printing from DisplayGrid";
 	cout << "  " << grid[0] << "  | " << grid[1]  << " |  " << grid[2] << endl;
 	cout << "  -------------" << endl;
@@ -19,7 +27,26 @@ void BoardMethods::CheckTurn(bool)
 {
 
 }
+
+BoardMethods::BoardMethods()
+{
+	turn = false;
+}
+
 string BoardMethods::CoinFlip()
 {
-	return "Player 1";
+//This string does a random coin toss, from one to two to determine who goes first in the game.
+	int random = rand() % 2 + 1;
+	cout << random;
+	if (random == 1)
+	{
+		return "Player 1";
+		turn = false;
+	}
+	else if (random == 2)
+	{
+		return "Player 2";
+		turn = true;
+	}
+
 }

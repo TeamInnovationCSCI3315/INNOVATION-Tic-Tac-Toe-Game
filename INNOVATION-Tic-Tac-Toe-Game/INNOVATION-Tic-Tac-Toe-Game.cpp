@@ -1,6 +1,7 @@
 #include "BoardMethods.h"
 #include "PlayerClass.h"
 #include <iostream>
+#include <ctime>
 #include <string>
 #include <cstdlib>
 using namespace std;
@@ -8,6 +9,9 @@ using namespace std;
 
 int main()
 {
+
+	string firstPlayer;
+	int choice = 1;
 
 	cout << "Welcome to Tic-Tac-Toe" << endl;
 	cout << "----------------------" << endl;
@@ -20,7 +24,8 @@ int main()
 	system("pause");
 	cout << endl;
 
-	cout << Board.CoinFlip() << " Will Go First" << endl << endl;
+	firstPlayer = Board.CoinFlip();
+	cout << firstPlayer << " Will Go First" << endl << endl;
 
 	system("pause");
 
@@ -30,9 +35,19 @@ int main()
 	cout << "Person to get three of their symbols in a row will win (Player 1 = X, Player 2 = O) " << endl << endl;
 
 
-	Board.DisplayGrid();
+	
 
-	cout << endl;
+	while(choice!=0)
+	{
+		firstPlayer = Board.CoinFlip();
+		cout << firstPlayer << " Will Go First" << endl << endl;
+		Board.DisplayGrid(choice);
+		cout << "\n";
+		cout << "Where would " << firstPlayer << " like to go ? ";
+		cin >> choice;
+	}
+	
 
-	cout << "Where would you like to go?";
+
+
 }

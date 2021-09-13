@@ -2,6 +2,7 @@
 #define PLAYERCLASS_H
 #include <iostream>
 #include <cstdlib>
+#include <ctime>
 #include <string>
 using namespace std;
 
@@ -12,10 +13,8 @@ private:
 	int score;
 
 
-
 public:
 
-	void CheckPlayer();
 	void DisplayScoreBoard();
 	int CheckWin();
 	int CheckDraw();

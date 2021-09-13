@@ -12,10 +12,12 @@ private:
 	string grid[9] = { "1","2","3","4","5","6","7","8","9" };
 	bool turn;
 public:
+	void GameStart();
 	string CoinFlip();
-	void DisplayGrid();
+	void DisplayGrid(int);
 	void CheckTurn(bool);
 
+	BoardMethods();
 
 };
 #endif
