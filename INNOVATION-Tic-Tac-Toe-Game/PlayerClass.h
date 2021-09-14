@@ -16,7 +16,7 @@ private:
 
 public:
 
-	void DisplayScoreBoard(); //Displays the score
+	void DisplayScoreBoard(int, int); //Displays the score
 
 
 };

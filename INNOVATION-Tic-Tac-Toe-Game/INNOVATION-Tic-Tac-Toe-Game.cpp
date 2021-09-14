@@ -13,6 +13,9 @@ int main()
 	string firstPlayer; //Player 1 string
 	int choice = 0; //Sets the player choice to 1 for determining turn
 
+	int ponewins = 0;
+	int ptwowins = 0;
+
 	cout << "Welcome to Tic-Tac-Toe" << endl; //Welcome statement with spacing
 	cout << "----------------------" << endl;
 
@@ -21,6 +24,7 @@ int main()
 	PlayerClass Player1; //Player 1
 	PlayerClass Player2; //Player 2
 	BoardMethods Board; //The board itself
+	PlayerClass Scoreboard; //Scoreboard
 	system("pause"); //System pauses for a moment
 	cout << endl; //Player details
 
@@ -48,11 +52,15 @@ int main()
 		if (Board.CheckWin() == 1)
 		{
 			cout << "Player 1 has Won";
+			ponewins++;
+			Scoreboard.DisplayScoreBoard(ponewins, ptwowins);
 			break;
 		}
 		else if (Board.CheckWin() == 2)
 		{
 			cout << "Player 2 has Won";
+			ptwowins++;
+			Scoreboard.DisplayScoreBoard(ponewins, ptwowins);
 			break;
 		}
 		else if (Board.CheckDraw())

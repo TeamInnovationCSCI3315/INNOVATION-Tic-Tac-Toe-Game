@@ -10,16 +10,27 @@ bool BoardMethods::InputValid() //This boolean checks if the input the user will
 {
 	int PlayerChoiceTest = PlayerChoice;
 	string validate = to_string(PlayerChoiceTest);
+	//validate == "1", "2", "3", "4", "5", "6", "7", "8", "9";
 		if(grid[PlayerChoice-1]!=validate)
 		{
 			inputv=false;//If there is a space that is taken it will return to the user as a false input
 			return false;
 		}
-		else
+
+
+		else 
 		{
-			inputv=true;//Otherwise it's a valid input and will be put in as true
-			return true;
+			 
+				inputv = true; //Otherwise it's a valid input and will be put in as true
+				return true;
 		}
+		/*
+		else (PlayerChoice > 9 || PlayerChoice < 1)
+		{
+			cout << "Input is invalid";
+		}*/
+
+		
 }
 
 void BoardMethods::PlayerInput()
@@ -99,9 +110,9 @@ void BoardMethods::DisplayGrid()
 	//This is the grid for the program, with numbers and spacing included.
 
 	cout << "  " << grid[0] << "  | " << grid[1] << " |  " << grid[2] << endl;
-	cout << "  -------------" << endl;
+	cout << " -------------" << endl;
 	cout << "  " << grid[3] << "  | " << grid[4] << " |  " << grid[5] << endl;
-	cout << "  -------------" << endl;
+	cout << " -------------" << endl;
 	cout << "  " << grid[6] << "  | " << grid[7] << " |  " << grid[8] << endl;
 }
 void BoardMethods::CheckTurn()

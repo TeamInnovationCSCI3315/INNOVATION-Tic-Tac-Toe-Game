@@ -8,7 +8,12 @@
 using namespace std;
 
 //Displays the number of games won
-void PlayerClass::DisplayScoreBoard()
+void PlayerClass::DisplayScoreBoard(int ponewins, int ptwowins)
 {
+	cout << "\n\n----------------------------------" << endl;
+	cout << "|           Total Wins           |" << endl;
+	cout << "----------------------------------" << endl;
+	cout << "| Player one : " << ponewins << " | Player two: " << ptwowins << " |" << endl;
+	cout << "----------------------------------";
 
 }
