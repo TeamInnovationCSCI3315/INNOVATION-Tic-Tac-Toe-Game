@@ -1,5 +1,6 @@
 #ifndef PLAYERCLASS_H
 #define PLAYERCLASS_H
+#include "BoardMethods.h"
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
@@ -16,8 +17,7 @@ private:
 public:
 
 	void DisplayScoreBoard(); //Displays the score
-	int CheckWin(); //The check win integer definied to be put into a scoreboard
-	int CheckDraw(); //The check draw integer defined to be put into a scoreboard
+
 
 };
 #endif

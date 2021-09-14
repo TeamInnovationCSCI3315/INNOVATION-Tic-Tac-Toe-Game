@@ -1,4 +1,5 @@
 #include "PlayerClass.h"
+#include "BoardMethods.h"
 #include <iostream>
 #include <string>
 #include <cstdlib>
@@ -10,14 +11,4 @@ using namespace std;
 void PlayerClass::DisplayScoreBoard()
 {
 
-}
-//Checks win condition
-int PlayerClass::CheckWin()
-{
-	return 0;
-}
-//Counts how may draws there have been
-int PlayerClass::CheckDraw()
-{
-	return 0;
 }

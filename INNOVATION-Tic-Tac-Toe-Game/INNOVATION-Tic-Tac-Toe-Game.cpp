@@ -36,18 +36,31 @@ int main()
 
 	Board.DisplayGrid();
 
-	
 
-	while(choice != 91)
+
+	while (choice != 91)
 	{
-	//	Board.DisplayGrid(choice); //The choice the player has to make called from BoardMethods.cpp
+		//	Board.DisplayGrid(choice); //The choice the player has to make called from BoardMethods.cpp
 		cout << "\n";
-	//	cout << "Where would " << firstPlayer << " like to go ? ";
-	//	cin >> choice; //The player's choice
-	Board.CheckTurn();
+		//	cout << "Where would " << firstPlayer << " like to go ? ";
+		//	cin >> choice; //The player's choice
+		Board.CheckTurn(); //Checks the turn
+		if (Board.CheckWin() == 1)
+		{
+			cout << "Player 1 has Won";
+			break;
+		}
+		else if (Board.CheckWin() == 2)
+		{
+			cout << "Player 2 has Won";
+			break;
+		}
+		else if (Board.CheckDraw())
+		{
+
+			break;
+
+		}
+
 	}
-	
-
-
-
 }
