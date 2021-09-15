@@ -132,7 +132,7 @@ void BoardMethods::CheckTurn()
 			while(cin.fail())
 			{
 				cin.clear();
-				cin.ignore(256,'\n');
+				cin.ignore(numeric_limits<streamsize>::max(),'\n');
 
 				cout << "Space is Taken or Invalid, Input Another Space: \n";
 				cin >> PlayerChoice;
@@ -169,7 +169,7 @@ void BoardMethods::CheckTurn()
 			while(cin.fail())
 			{
 				cin.clear();
-				cin.ignore(256,'\n');
+				cin.ignore(numeric_limits<streamsize>::max(),'\n');
 
 				cout << "Space is Taken or Invalid, Input Another Space: \n";
 				cin >> PlayerChoice;
@@ -308,14 +308,23 @@ bool BoardMethods::CheckPlayer()
 	cin >> answer; //Stores the answer
 	if (islower(answer)) answer = toupper(answer);
 
-	if (answer == 'Y')//Checks the answer
+	while ()
 	{
-		return true;
+		if (answer == 'Y')//Checks the answer
+		{
+			return true;
+		}
+		else if (answer == 'N')
+		{
+			exit(0);
+		}
+		else
+		{
+			cout << "Input is invalid. Please answer Y/N: " << endl;
+			cin >> answer;
+		}
 	}
-	else if (answer == 'N')
-	{
-		exit(0);
-	}
+	
 
 }
 
