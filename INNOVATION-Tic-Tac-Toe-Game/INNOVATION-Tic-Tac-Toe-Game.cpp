@@ -4,6 +4,7 @@
 #include <ctime>
 #include <string>
 #include <cstdlib>
+#include <cctype>
 using namespace std;
 
 
@@ -45,7 +46,7 @@ int main()
 	{
 		Board.DisplayGrid();
 
-		while (choice != 91)
+		while (choice != -1)
 		{
 			//	Board.DisplayGrid(choice); //The choice the player has to make called from BoardMethods.cpp
 			cout << "\n";

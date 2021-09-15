@@ -4,6 +4,7 @@
 #include <ctime>
 #include <string>
 #include <cstdlib>
+#include <cctype>
 
 using namespace std;
 bool BoardMethods::InputValid() //This boolean checks if the input the user will make is a valid input
@@ -14,20 +15,23 @@ bool BoardMethods::InputValid() //This boolean checks if the input the user will
 		if(grid[PlayerChoice-1]!=validate)
 		{
 			inputv=false;//If there is a space that is taken it will return to the user as a false input
+			//cout << "1 False";
 			return false;
 		}
-
+		else if(PlayerChoice <1 || PlayerChoice >9)
+		{
+			inputv=false;//If there is a space that is taken it will return to the user as a false input
+			//cout << "2 false";
+			return false;
+		}
 		else 
 		{
-			 
 				inputv = true; //Otherwise it's a valid input and will be put in as true
+				//cout << "true";
 				return true;
 		}
-		/*
-		else (PlayerChoice > 9 || PlayerChoice < 1)
-		{
-			cout << "Input is invalid";
-		}*/
+		
+
 
 		
 }
@@ -116,14 +120,24 @@ void BoardMethods::DisplayGrid()
 }
 void BoardMethods::CheckTurn()
 {
+	
 	if (turn == false)
 	{
 		cout << "Player 1's Turn: Enter a number (1-9) on the board\n"; //Player 1's Turn
 		cin >> PlayerChoice; // Takes in the input of the player
-		while(!InputValid())
+		while(!InputValid()) 
 		{
-			cout << "Space is Taken\n";
+			cout << "Space is Taken, Input Another Space: \n";
 			cin >> PlayerChoice;
+			while(cin.fail())
+			{
+				cin.clear();
+				cin.ignore(256,'\n');
+
+				cout << "Space is Taken or Invalid, Input Another Space: \n";
+				cin >> PlayerChoice;
+			}
+
 		}
 		PlayerInput();
 		DisplayGrid(); //Displays the choice just made
@@ -150,8 +164,16 @@ void BoardMethods::CheckTurn()
 		cin >> PlayerChoice; //Takes in the input of the player
 		while(!InputValid())
 		{
-			cout << "Space is Taken\n";
+			cout << "Space is Taken or Invalid, Input Another Space: \n";
 			cin >> PlayerChoice;
+			while(cin.fail())
+			{
+				cin.clear();
+				cin.ignore(256,'\n');
+
+				cout << "Space is Taken or Invalid, Input Another Space: \n";
+				cin >> PlayerChoice;
+			}
 		}
 		PlayerInput();
 		DisplayGrid(); //Displays the choice just made
@@ -284,14 +306,14 @@ bool BoardMethods::CheckPlayer()
 {
 	cout << "\n\nWould you like to play again? Y/N" << endl;//Asks the player if they want to restart
 	cin >> answer; //Stores the answer
+	if (islower(answer)) answer = toupper(answer);
 
-	if (answer == "Y")//Checks the answer
+	if (answer == 'Y')//Checks the answer
 	{
 		return true;
 	}
-	else if (answer == "N")
+	else if (answer == 'N')
 	{
-		return false;
 		exit(0);
 	}
 
