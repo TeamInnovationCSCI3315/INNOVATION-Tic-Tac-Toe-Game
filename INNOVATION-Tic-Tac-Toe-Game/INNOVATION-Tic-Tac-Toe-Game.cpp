@@ -1,3 +1,4 @@
+//Made by Team Innovation, Andrew Mester, Thomas Wood, Louis Mednick, Yash Bhawsar and Stefan Zawojski
 #include "BoardMethods.h"
 #include "PlayerClass.h"
 #include <iostream>
@@ -37,7 +38,7 @@ int main()
 	cout << endl << endl;
 	cout << "Rules: Labeled Player will input their desired location on the grid with numbers [1-9]\n\n"; //Displays rules to users
 	cout << "The player to get three of their symbols in a row, column, or diagonal will win (Player 1 = X, Player 2 = O) \n\n"; //Win Condition
-	cout << "If there are no rows, columns, or diagnoals made by a player by the end of the game, the game will end in a draw\n\n"; 
+	cout << "If there are no rows, columns, or diagnoals made by a player by the end of the game, the game will end in a draw\n\n"; //States the Draw condition
 
 	
 
@@ -59,7 +60,7 @@ int main()
 				ponewins++;//A point is added to the scoreboard
 				Scoreboard.DisplayScoreBoard(ponewins, ptwowins);//It displays the score
 				
-				Board.ResetBoard();
+				Board.ResetBoard();//Resets the board
 				break;
 			}
 			else if (Board.CheckWin() == 2)
@@ -67,12 +68,12 @@ int main()
 				cout << "Player 2 has Won";//Player 2 wins
 				ptwowins++;//A point is added to the scoreboard
 				Scoreboard.DisplayScoreBoard(ponewins, ptwowins);//It displays the score
-				Board.ResetBoard();
+				Board.ResetBoard();//Resets the board
 				break;
 			}
 			else if (Board.CheckDraw())//If nobody wins it's a draw
 			{
-				Board.ResetBoard();
+				Board.ResetBoard();//Resets the board
 				break;
 
 			}

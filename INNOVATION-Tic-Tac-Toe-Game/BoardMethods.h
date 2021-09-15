@@ -12,7 +12,7 @@ private:
 
 	string grid[9] = { "1","2","3","4","5","6","7","8","9" };
 	bool turn; //Bool turn is made
-	char answer;
+	char answer;//The answer to the Y/N question at the end of the program
 	bool inputv;//The boolean for the input validation
 public:
 	int counter = 0;//counts the board
@@ -20,7 +20,7 @@ public:
 	bool CheckPlayer(); //Asks player if they would like to play another game
 	int CheckWin(); //The check win integer definied to be put into a scoreboard
 	int CheckDraw(); //The check draw integer defined to be put into a scoreboard
-	bool InputValid();
+	bool InputValid();//Checks if the input is valid
 	void GameStart(); //Game begins
 	string CoinFlip(); //Gives the CoinFlip 
 	void DisplayGrid(); //Displays the grid and the choices

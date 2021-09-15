@@ -125,24 +125,24 @@ void BoardMethods::CheckTurn()
 	{
 		cout << "Player 1's Turn: Enter a number (1-9) on the board\n"; //Player 1's Turn
 		cin >> PlayerChoice; // Takes in the input of the player
-		while(!InputValid()) 
+		while(!InputValid()) //A loop to check if the Input is invalid and it will reply false
 		{
 			cout << "Space is Taken, Input Another Space: \n";
-			cin >> PlayerChoice;
+			cin >> PlayerChoice; //Asks the player again
 			while(cin.fail())
 			{
-				cin.clear();
-				cin.ignore(numeric_limits<streamsize>::max(),'\n');
+				cin.clear(); //If the input is wrong the program clears it
+				cin.ignore(numeric_limits<streamsize>::max(),'\n'); //And ignores it
 
-				cout << "Space is Taken or Invalid, Input Another Space: \n";
-				cin >> PlayerChoice;
+				cout << "Space is Taken or Invalid, Input Another Space: \n"; 
+				cin >> PlayerChoice; //Asks the player again
 			}
 
 		}
-		PlayerInput();
+		PlayerInput();//Runs the player input
 		DisplayGrid(); //Displays the choice just made
 		turn=true; //Ends the player's turn
-		counter++;
+		counter++;//Increases the counter for the win
 /*		if (CheckWin() == 1)
 		{
 			cout << "Player 1 Wins";
@@ -162,17 +162,17 @@ void BoardMethods::CheckTurn()
 	{
 		cout << "Player 2's Turn: Enter a number (1-9) on the board\n"; //Player 2's turn
 		cin >> PlayerChoice; //Takes in the input of the player
-		while(!InputValid())
+		while(!InputValid()) //A loop to check if the Input is invalid and it will reply false
 		{
 			cout << "Space is Taken or Invalid, Input Another Space: \n";
-			cin >> PlayerChoice;
+			cin >> PlayerChoice; //Asks the player to input again
 			while(cin.fail())
 			{
-				cin.clear();
-				cin.ignore(numeric_limits<streamsize>::max(),'\n');
+				cin.clear(); //Clears the input
+				cin.ignore(numeric_limits<streamsize>::max(),'\n'); //And ignores it
 
 				cout << "Space is Taken or Invalid, Input Another Space: \n";
-				cin >> PlayerChoice;
+				cin >> PlayerChoice; //Asks the player to input again
 			}
 		}
 		PlayerInput();
@@ -306,10 +306,8 @@ bool BoardMethods::CheckPlayer()
 {
 	cout << "\n\nWould you like to play again? Y/N" << endl;//Asks the player if they want to restart
 	cin >> answer; //Stores the answer
-	if (islower(answer)) answer = toupper(answer);
+	if (islower(answer)) answer = toupper(answer);//Checks if the answer is lower or over
 
-	while ()
-	{
 		if (answer == 'Y')//Checks the answer
 		{
 			return true;
@@ -321,15 +319,15 @@ bool BoardMethods::CheckPlayer()
 		else
 		{
 			cout << "Input is invalid. Please answer Y/N: " << endl;
-			cin >> answer;
+			cin >> answer; //Asks the player to try again inputting something valid
 		}
-	}
 	
-
 }
+	
 
 void BoardMethods::ResetBoard()
 {
+	//This all resets the board to 0.
 	grid[0]="1";
 	grid[1]="2";
 	grid[2]="3";
