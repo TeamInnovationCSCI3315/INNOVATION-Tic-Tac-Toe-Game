@@ -306,20 +306,23 @@ bool BoardMethods::CheckPlayer()
 {
 	cout << "\n\nWould you like to play again? Y/N" << endl;//Asks the player if they want to restart
 	cin >> answer; //Stores the answer
-	if (islower(answer)) answer = toupper(answer);//Checks if the answer is lower or over
+	if (islower(answer)) answer = toupper(answer);//Turns a lowercase input into an uppercase input
 
-		if (answer == 'Y')//Checks the answer
+		while (answer == 'Y' || 'N')
 		{
-			return true;
-		}
-		else if (answer == 'N')
-		{
-			exit(0);
-		}
-		else
-		{
+			if (answer == 'Y')//Checks the answer
+			{
+				return true;
+			}
+			else if (answer == 'N')
+			{
+				exit(0);
+			}
+
 			cout << "Input is invalid. Please answer Y/N: " << endl;
 			cin >> answer; //Asks the player to try again inputting something valid
+			if (islower(answer)) answer = toupper(answer);//Turns a lowercase input into an uppercase input
+
 		}
 	
 }
