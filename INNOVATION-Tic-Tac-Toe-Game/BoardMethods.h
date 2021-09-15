@@ -9,12 +9,13 @@ class BoardMethods
 {
 private:
 	// The default values of the grid are stored below
-	int counter = 0;//counts the board
+
 	string grid[9] = { "1","2","3","4","5","6","7","8","9" };
 	bool turn; //Bool turn is made
 	string answer;
 	bool inputv;//The boolean for the input validation
 public:
+	int counter = 0;//counts the board
 	int PlayerChoice; //The creation of PlayerChoice
 	bool CheckPlayer();
 	int CheckWin(); //The check win integer definied to be put into a scoreboard

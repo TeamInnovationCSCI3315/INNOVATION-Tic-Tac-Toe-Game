@@ -299,7 +299,6 @@ bool BoardMethods::CheckPlayer()
 
 void BoardMethods::ResetBoard()
 {
-	string test;
 	grid[0]="1";
 	grid[1]="2";
 	grid[2]="3";
@@ -309,6 +308,7 @@ void BoardMethods::ResetBoard()
 	grid[6]="7";
 	grid[7]="8";
 	grid[8]="9";
+	counter=0;
 
 
 }

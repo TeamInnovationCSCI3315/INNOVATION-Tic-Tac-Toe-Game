@@ -57,6 +57,7 @@ int main()
 				cout << "Player 1 has Won";//Player 1 wins
 				ponewins++;//A point is added to the scoreboard
 				Scoreboard.DisplayScoreBoard(ponewins, ptwowins);//It displays the score
+				
 				Board.ResetBoard();
 				break;
 			}
