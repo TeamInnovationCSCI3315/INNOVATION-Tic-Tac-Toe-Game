@@ -17,7 +17,6 @@ bool BoardMethods::InputValid() //This boolean checks if the input the user will
 			return false;
 		}
 
-
 		else 
 		{
 			 
@@ -166,6 +165,7 @@ BoardMethods::BoardMethods()
 {
 	PlayerChoice = 0; //Sets the default choice for the player
 	inputv=true; //Sets the default input validation as true
+	//grid[9] = { "1","2","3","4","5","6","7","8","9" };
 }
 
 string BoardMethods::CoinFlip()
@@ -267,12 +267,48 @@ int BoardMethods::CheckWin()
 //Counts how may draws there have been
 int BoardMethods::CheckDraw()
 {
+
 	if (counter == 9 && CheckWin() == 0)
 	{
 		cout << "Game is a draw";
+		counter=0;
 		return true;
+
 	}
 	else
 		return false;
+
+}
+
+bool BoardMethods::CheckPlayer()
+{
+	cout << "\n\nWould you like to play again? Y/N" << endl;//Asks the player if they want to restart
+	cin >> answer; //Stores the answer
+
+	if (answer == "Y")//Checks the answer
+	{
+		return true;
+	}
+	else if (answer == "N")
+	{
+		return false;
+		exit(0);
+	}
+
+}
+
+void BoardMethods::ResetBoard()
+{
+	string test;
+	grid[0]="1";
+	grid[1]="2";
+	grid[2]="3";
+	grid[3]="4";
+	grid[4]="5";
+	grid[5]="6";
+	grid[6]="7";
+	grid[7]="8";
+	grid[8]="9";
+
 
 }

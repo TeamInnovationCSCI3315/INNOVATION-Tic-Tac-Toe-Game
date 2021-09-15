@@ -12,10 +12,11 @@ private:
 	int counter = 0;//counts the board
 	string grid[9] = { "1","2","3","4","5","6","7","8","9" };
 	bool turn; //Bool turn is made
-
+	string answer;
 	bool inputv;//The boolean for the input validation
 public:
 	int PlayerChoice; //The creation of PlayerChoice
+	bool CheckPlayer();
 	int CheckWin(); //The check win integer definied to be put into a scoreboard
 	int CheckDraw(); //The check draw integer defined to be put into a scoreboard
 	bool InputValid();
@@ -24,6 +25,7 @@ public:
 	void DisplayGrid(); //Displays the grid and the choices
 	void CheckTurn();  //Checks the current turn from the two players
 	void PlayerInput(); //Checks player input
+	void ResetBoard(); // Resets board spaces for new game
 	BoardMethods(); //The default board at the start of the game
 
 };

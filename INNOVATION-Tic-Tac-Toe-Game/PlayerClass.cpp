@@ -10,6 +10,7 @@ using namespace std;
 //Displays the number of games won
 void PlayerClass::DisplayScoreBoard(int ponewins, int ptwowins)
 {
+//Below is the scoreboard
 	cout << "\n\n----------------------------------" << endl;
 	cout << "|           Total Wins           |" << endl;
 	cout << "----------------------------------" << endl;
@@ -17,3 +18,5 @@ void PlayerClass::DisplayScoreBoard(int ponewins, int ptwowins)
 	cout << "----------------------------------";
 
 }
+
+
